@@ -1,6 +1,6 @@
 # Sieve-of-Eratosthenes
 
-[About](#about) • [Compile](#compile) • [Basic Usage](#basic-usage) 
+[About](#about) • [Branches](#branches)
 
 ## About  
 This is an exercise to find all prime numbers up to any given limit.
