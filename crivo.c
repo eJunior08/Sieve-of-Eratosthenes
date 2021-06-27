@@ -2,29 +2,29 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int *CRIVO_init(int N)
+bool *CRIVO_init(int N)
 {
-  int *arr = (int *)malloc(N * sizeof(int));
+  bool *arr = (bool *)malloc(N * sizeof(bool));
 
   for (int i = 0; i < N; i++)
   {
-    arr[i] = i;
+    arr[i] = false;
   }
 
   return arr;
 }
 
-bool CRIVO_connected(int p, int *arr)
+bool CRIVO_connected(int p, bool *arr)
 {
-  return arr[p] != p;
+  return arr[p] != false;
 }
 
-void CRIVO_union(int p, int q, int *arr)
+void CRIVO_union(int p, int q, bool *arr)
 {
-  arr[q] = arr[p];
+  arr[q] = true;
 }
 
-int CRIVO_nextPrime(int p, int *arr, int N)
+int CRIVO_nextPrime(int p, bool *arr, int N)
 {
   for (int i = p + 1; i < N; i++)
   {
@@ -35,7 +35,7 @@ int CRIVO_nextPrime(int p, int *arr, int N)
   }
 }
 
-void CRIVO_free(int *arr)
+void CRIVO_free(bool *arr)
 {
   free(arr);
 }

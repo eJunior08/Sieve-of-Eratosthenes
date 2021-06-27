@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "crivo.h"
 
 int main(int argc, char *argv[])
 {
   int N = atoi(argv[1]);
-  int *arr;
+  bool *arr;
   int p, q;
 
   arr = CRIVO_init(N);
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
         continue;
       }
 
-      if (arr[j] % i == 0)
+      if (j % i == 0)
       {
         CRIVO_union(i, j, arr);
       }
@@ -29,16 +30,16 @@ int main(int argc, char *argv[])
     i = CRIVO_nextPrime(i, arr, N);
   }
 
-  /* for (int i = 0; i < N; i++)
+  /*  for (int i = 0; i < N; i++)
   {
     if (!CRIVO_connected(i, arr))
     {
 
-      // printf("%d ", arr[i]);
+      printf("%d ", i);
     }
-  } */
+  }
 
-  // printf("\n");
+  printf("\n"); */
 
   CRIVO_free(arr);
 }
